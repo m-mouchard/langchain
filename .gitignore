@@ -1,4 +1,6 @@
 .env
 /venv_langchain
 
-0.2.27
+/python/venv_langchain
+
+/node_modules

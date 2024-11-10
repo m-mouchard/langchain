@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@langchain/core": "^0.3.17",
+    "@langchain/google-vertexai": "^0.1.0",
     "@langchain/openai": "^0.3.12",
     "dotenv": "^16.4.5",
     "langchain": "^0.3.5"

@@ -23,7 +23,7 @@ const model = new ChatVertexAI(
 //     new HumanMessage("Como ves la situación macroeconómica?"),
 // ];
 
-const systemTemplate = "You are super {adjective}";
+const systemTemplate = "Translate this into {language}";
 
 const promptTemplate = ChatPromptTemplate.fromMessages([
     ["system", systemTemplate],
@@ -31,7 +31,7 @@ const promptTemplate = ChatPromptTemplate.fromMessages([
 ])
 
 // const promptValue = await promptTemplate.invoke({
-//     adjective: "optimistic",
+//     language : "optimistic",
 //     text: "¿Como ves el sistema educativo de estados unidos?"
 // });
 
@@ -46,4 +46,6 @@ const parser = new StringOutputParser();
 //Método pipe para crear cadenas. Encadenados el modelo con el parser
 const llmChain = promptTemplate.pipe(model).pipe(parser);
 
-console.log(await llmChain.invoke({adjective: "pesimistic", text:"¿Como ves el sistema educativo de estados unidos?" }));
+const result = await llmChain.invoke({language: "catalan", text:"¿Como ves el sistema educativo de estados unidos?" });
+
+console.log(result);

@@ -22,6 +22,7 @@ const callModel = async (state: typeof MessagesAnnotation.State) => {
   return { messages: response };
 };
 
+// nodes do the work. edges tell what to do next.
 const workflow = new StateGraph(MessagesAnnotation)
   .addNode("model", callModel)
   .addEdge(START, "model")
@@ -67,7 +68,7 @@ const input4 = [
     role: "user",
     content: "Como me llamo de nuevo?"
   }
-]
+];
 
 const output4 = await app.invoke({messages: input4}, config);
 

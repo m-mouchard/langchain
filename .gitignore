@@ -2,5 +2,6 @@
 /venv_langchain
 
 /python/venv_langchain
+/python/dudas_python.txt
 
-/node_modules
+/node/node_modules
